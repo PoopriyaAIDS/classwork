@@ -1,23 +1,30 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function Login() {
-    
-  const[email, setEmail] = useState("");
-  const[password, setPassword] = useState("");
-  const formsubmit = (e) => {
+  const navigate = useNavigate
+  const [formData, setFormData] = useState({ username: "", password: "" });
+  function handleChange(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+  function handleSubmit(e) {
     e.preventDefault();
-    console.log({ email, password });
+    alert("Login Successful")
+    navigate ("/dashboard", {
+      state:formData
+    })
+    
   }
   return (
-    
-    <>
-    <div>HI</div>
-    <form onSubmit={formsubmit}>
-      <input type="email" placeholder="Enter your email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-      <input type="password" placeholder="Enter your password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button type="submit">Submit</button> 
-    </form>
-    </>
-
-    );
+    <div>
+      <h1>Login Page</h1>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="username" placeholder="Enter Username" value={formData.username} onChange={handleChange} required />
+        <br />
+        <input type="password" name="password" placeholder="Enter Password" value={formData.password} onChange={handleChange} required />
+        <br />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
 }
 export default Login;
