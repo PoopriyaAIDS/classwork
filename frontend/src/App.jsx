@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/login";
-import Projects from "./pages/projects";
+import Projects from './pages/projects';
 import Tasks from "./pages/tasks";
+import Login from "./pages/login";
+import Team from './pages/team';
+import Settings from './pages/settings';
+import Clients from './pages/clients';
+import Dashboard from './pages/dashboard';
+import Calendar from './pages/calendar';
+
 
 function App() {
   
@@ -18,10 +24,16 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/tasks" element={<Tasks />} />
+        <Route path = "/" element = {<Login/>}/>
+        <Route path = "/projects" element = {<Projects/>}/>
+        <Route path = "/tasks"  element = {<Tasks/>}/>
+        <Route path = "/team"  element = {<Team/>}/>
+        <Route path = "/clients"  element = {<Clients/>}/>
+        <Route path = "/settings"  element = {<Settings/>}/>
+        <Route path = "/calendar"  element = {<Calendar/>}/>
+        <Route path = "/dashboard"  element = {<Dashboard/>}/>        
       </Routes>
+         
     </BrowserRouter>
 
     {
