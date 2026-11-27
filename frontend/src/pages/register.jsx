@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { registerschema } from "../components/FormSchema/registerschema";
 import { useNavigate } from "react-router-dom";
-
+import "../App.css";
 function Register() {
     const navigate = useNavigate();
     const{register, handleSubmit, formState:{errors}} = useForm({
@@ -11,7 +11,9 @@ function Register() {
     function onSubmit1(data){
         console.log(data)
         alert("Registration successful")
-        navigate("/")
+        navigate("/", {
+            state: data
+        })
     }
     return(
         <>
@@ -24,10 +26,9 @@ function Register() {
             <p>{errors.password?.message}</p>
             <input type="number" placeholder="Enter your age:" {...register("age")}/>
             <p>{errors.age?.message}</p>
-            <button type="submit">Button</button>
+            <button type="submit">Register</button>
         </form>
         </>
     );
 }
-
 export default Register;
