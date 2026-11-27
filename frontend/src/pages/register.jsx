@@ -26,7 +26,7 @@ function Register() {
             <p>{errors.password?.message}</p>
             <input type="number" placeholder="Enter your age:" {...register("age")}/>
             <p>{errors.age?.message}</p>
-            <button type="submit">Register</button>
+            <button type="submit">Register.</button>
         </form>
         </>
     );
