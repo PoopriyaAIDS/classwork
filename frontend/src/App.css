@@ -25,8 +25,6 @@ form {
   flex-direction: column;
   gap: 14px;
 }
-
-/* Adds "Create Account" at the top of the form using CSS only */
 form::before {
   content: "Create Account";
   position: absolute;
@@ -95,7 +93,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(160deg, #0b2b9e 0%, #1648c7 55%, #0c2685 100%);
+  background: linear-gradient(160deg, #bec1cc 0%, #b6bcca 55%, #b9becf 100%);
 }
 
 form {

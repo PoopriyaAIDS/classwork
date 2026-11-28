@@ -22,13 +22,13 @@ function Login() {
     e.preventDefault();
     console.log("Login data", logindata)
     console.log("Register data", registerdata)
-    if(logindata.username===registerdata.name && logindata.password===registerdata.password){
+    if(logindata.username === registerdata.name && logindata.password === registerdata.password){
       console.log("if success")
       navigate("/dashboard", {
         state: logindata
       })
     }else{
-      console.log("Inavalid crendentials")
+      console.log("Invalid crendentials")
     }
   }
   return (
